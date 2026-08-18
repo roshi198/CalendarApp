@@ -1,0 +1,158 @@
+/* Controls all the text for the numbers */
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Andale Mono', monospace;
+    color: #97efea !important;
+}
+
+/* Controls the background of the site */
+body {
+    display: flex;
+    background: #ffcaaa;
+    min-height: 100vh;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Controls the background of the calendar */
+.calendar-container {
+    background: #5060b4;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Controls the header elements of the calendar container*/
+.calendar-container header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px 8px;
+    justify-content: space-between;
+}
+
+/* Controls the navigation elements of the calendar container */
+header .calendar-navigation {
+    display: flex;
+}
+
+/* Controls the shape of the calendar header elements */
+header .calendar-navigation span {
+    height: 30px;
+    width: 30px;
+    margin: 0 2px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    user-select: none;
+    color: #a41a1a;
+    font-size: 1.4rem;
+}
+
+/* Controls the position of the calendar navigation elements */
+.calendar-navigation span:last-child {
+    margin-right: -8px;
+}
+
+/* Controls the color of the calendar navigation elements */
+header .calendar-navigation span:hover {
+    background: #b72727;
+}
+
+/* Controls the font elements of the current date */
+header .calendar-current-date {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+/* Controls the shape of the calendar */
+.calendar-body {
+    padding: 10px;
+}
+
+/* Controls the style of the day elements */
+.calendar-body ul {
+    list-style: none;
+    flex-wrap: wrap;
+    display: flex;
+    text-align: center;
+}
+
+/* Controls the spacing of the dates */
+.calendar-body .calendar-dates {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* Controls the shape of the calendar */
+.calendar-body li {
+    width: calc(100% / 7);
+    height: 30px;
+    line-height: 30px;
+    font-size: 0.9rem;
+    color: #414141;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Controls the font elements of the weekdays */
+.calendar-body .calendar-weekdays li {
+    cursor: text;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* I don't fucking know */
+.calendar-dates li.inactive {
+    color: #b26a6a;
+    cursor: default;
+}
+
+/* I don't fucking know */
+.calendar-dates li.active {
+    color: #d90000;
+}
+
+/* Controls the position of the current day selection */
+.calendar-dates li::before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Controls the color of the current day selection */
+.calendar-dates li.active::before {
+    background: #ad1616;
+}
+
+/* Controls the color of the selection */
+.calendar-dates li:not(.active):not(.highlight):hover::before {
+    background: #e87f18;
+}
+
+/* Controls the highlight element */
+.calendar-dates li.highlight {
+    background: #6e0b0b !important;
+    border: 2px solid #dc8d8e !important;
+    border-radius: 50%;
+    position: relative;
+    z-index: 10;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: calc(100% / 10);
+}
