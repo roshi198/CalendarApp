@@ -1,4 +1,4 @@
-# CalendarMCP
+# CalendarAIAgent
 
 Browsing calendar:
 
